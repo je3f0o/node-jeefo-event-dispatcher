@@ -1,0 +1,12 @@
+{
+  "name": "jeefo-event-dispatcher",
+  "version": "0.0.0",
+  "description": "Very simple light-weight event dispatcher",
+  "main": "index.js",
+  "author": "je3f0o",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:je3f0o/node-jeefo-event-dispatcher.git"
+  },
+  "license": "MIT"
+}
