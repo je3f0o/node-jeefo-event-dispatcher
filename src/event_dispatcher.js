@@ -2,7 +2,7 @@
 * File Name  : event_dispatcher.js
 * Purpose    :
 * Created at : 2015-09-30
-* Updated at : 2015-09-30
+* Updated at : 2015-10-06
 * Author     : jeefo
 _._._._._._._._._._._._._._._._._._._._._.*/
 
@@ -32,11 +32,11 @@ p.off = function (event_name, event_handler) {
 	}
 };
 
-p.emit = function (event_name, data) {
+p.emit = function (event_name, data, this_arg) {
 	var events = this.events[event_name];
 	if (events) {
 		events.forEach(function (event_handler) {
-			event_handler(data);
+			event_handler.call(this_arg, data);
 		});
 	}
 };
@@ -53,7 +53,7 @@ module.exports = {
 		return this;
 	},
 	emit : function (event_name, data) {
-		events.emit(event_name, data);
+		events.emit(event_name, data, this);
 		return this;
 	}
 };
